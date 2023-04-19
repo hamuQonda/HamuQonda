@@ -58,5 +58,29 @@ namespace HamuQonda.Properties {
                 this["DefaultEnv"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SelectedPyEnvNo {
+            get {
+                return ((int)(this["SelectedPyEnvNo"]));
+            }
+            set {
+                this["SelectedPyEnvNo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SelectedPyVenvNo {
+            get {
+                return ((int)(this["SelectedPyVenvNo"]));
+            }
+            set {
+                this["SelectedPyVenvNo"] = value;
+            }
+        }
     }
 }

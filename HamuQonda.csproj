@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +48,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>h47-i1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>HamuQonda.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +69,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CmdRun.cs" />
+    <Compile Include="Dialog1VenvCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog1VenvCreate.Designer.cs">
+      <DependentUpon>Dialog1VenvCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog2VenvClone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog2VenvClone.Designer.cs">
+      <DependentUpon>Dialog2VenvClone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Is.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Py0p.cs" />
+    <Compile Include="PyPanelManager.cs" />
     <Compile Include="PythonEnv.cs" />
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
@@ -61,18 +105,20 @@
     <Compile Include="SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialog1VenvCreate.resx">
+      <DependentUpon>Dialog1VenvCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog2VenvClone.resx">
+      <DependentUpon>Dialog2VenvClone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +134,50 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h47_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\env-prpt.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinterp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\py-IDLE.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jupyterN.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\459_ca_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\602_ex_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\459_ca_h1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_icon_152214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="h47-i1.ico" />
+    <Content Include="Resources\req_Input.png" />
+    <Content Include="Resources\req_Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
