@@ -23,4 +23,10 @@ It is software that makes it easy to use multiple Python versions and virtual en
     システム側の環境変数PATHはきれいなままです。
     仮想環境が選択されている場合、各ツールは 仮想環境がアクティベートされた状態で開かれます。
 ### 2. Able to understand the type and version of Python. ( Pythonの種類・バージョンを把握できる )
-<br>
+  You can figure out where Python was installed from on your system.<br>
+  Is it from the official Python, Microsoft Store Python, or Anaconda Python?<br>
+  Python versions are shown up to major , minor , micro numbers.<br>
+  
+    システム中のPythonがどこからインストールされたのかを把握できます。
+    Python公式からなのか、マイクロソフトストアのPythonなのか、AnacondaのPythonなのか
+    Pythonバージョンは、メジャー.マイナー.マイクロ まで表示されます。
