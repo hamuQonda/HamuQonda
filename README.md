@@ -1,4 +1,5 @@
-# HamuQonda  ( ハムコンダ：Python環境切り替えランチャー )
+# HamuQonda ( Python environment switching launcher with GUI )
+ ハムコンダ（GUIでPython環境切り替えランチャー）<br>
 It is software that makes it easy to use multiple Python versions and virtual environments on Windows.<br>
   With the working folder as the current directory,<br>
   activate the environment you want to use and open the following tools with one click.<br>
@@ -26,7 +27,24 @@ It is software that makes it easy to use multiple Python versions and virtual en
   You can figure out where Python was installed from on your system.<br>
   Is it from the official Python, Microsoft Store Python, or Anaconda Python?<br>
   Python versions are shown up to major , minor , micro numbers.<br>
+  The location of python.exe is also displayed.<br>
   
     システム中のPythonがどこからインストールされたのかを把握できます。
     Python公式からなのか、マイクロソフトストアのPythonなのか、AnacondaのPythonなのか
     Pythonバージョンは、メジャー.マイナー.マイクロ まで表示されます。
+    又、python.exeの場所も表示されます。
+
+## Installation and the first thing to do ( インストールと最初にすべき事 )
+### 1. To install, simply place HamuQonda.exe in the desired folder.
+    HamuQonda.exeを任意のフォルダに置くだけでOKです。
+
+### 2. Set up a working folder and a storage folder for the virtual environment.
+    作業フォルダと仮想環境格納フォルダを確認してください。
+  The working folder settings are located at the top of the window.<br>
+Click on the triangle button to expand the window.<br>
+The folder settings for storing virtual environments are at the bottom.<br>
+
+    作業フォルダーの設定は、ウィンドウの上部にあります。
+    三角形のボタンをクリックして、ウィンドウを拡大します。
+    仮想環境の格納フォルダ設定は一番下にあります。
+
