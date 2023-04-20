@@ -99,12 +99,12 @@
             // lbl_workingFolder
             // 
             this.lbl_workingFolder.AutoSize = true;
-            this.lbl_workingFolder.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_workingFolder.Location = new System.Drawing.Point(11, 10);
+            this.lbl_workingFolder.Font = new System.Drawing.Font("Ricty Diminished", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_workingFolder.Location = new System.Drawing.Point(9, 12);
             this.lbl_workingFolder.Name = "lbl_workingFolder";
-            this.lbl_workingFolder.Size = new System.Drawing.Size(80, 15);
+            this.lbl_workingFolder.Size = new System.Drawing.Size(91, 13);
             this.lbl_workingFolder.TabIndex = 1;
-            this.lbl_workingFolder.Text = "作業フォルダ =";
+            this.lbl_workingFolder.Text = "作業フォルダー";
             this.lbl_workingFolder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.lbl_workingFolder, "カレントディレクトリ(現在のフォルダ)");
             // 
@@ -114,10 +114,10 @@
             this.txtBoxWorkDir.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxWorkDir.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBoxWorkDir.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtBoxWorkDir.Location = new System.Drawing.Point(88, 12);
+            this.txtBoxWorkDir.Location = new System.Drawing.Point(93, 12);
             this.txtBoxWorkDir.Name = "txtBoxWorkDir";
             this.txtBoxWorkDir.ReadOnly = true;
-            this.txtBoxWorkDir.Size = new System.Drawing.Size(450, 14);
+            this.txtBoxWorkDir.Size = new System.Drawing.Size(445, 14);
             this.txtBoxWorkDir.TabIndex = 0;
             this.txtBoxWorkDir.TabStop = false;
             // 
@@ -135,7 +135,7 @@
             this.btnWdirChange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.btnWdirChange, "作業フォルダの変更");
             this.btnWdirChange.UseVisualStyleBackColor = false;
-            this.btnWdirChange.Click += new System.EventHandler(this.btnWdirChange_Click);
+            this.btnWdirChange.Click += new System.EventHandler(this.BtnWdirChange_Click);
             // 
             // contextMenuStrip1
             // 
@@ -161,7 +161,7 @@
             this.tStripMenu_Cmd.Name = "tStripMenu_Cmd";
             this.tStripMenu_Cmd.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_Cmd.Text = "コマンドプロンプト";
-            this.tStripMenu_Cmd.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.tStripMenu_Cmd.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
             // tStripMenu_PyIp
             // 
@@ -170,7 +170,7 @@
             this.tStripMenu_PyIp.Name = "tStripMenu_PyIp";
             this.tStripMenu_PyIp.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_PyIp.Text = "Pythonインタプリタ";
-            this.tStripMenu_PyIp.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            this.tStripMenu_PyIp.Click += new System.EventHandler(this.ToolStripMenuItem2_Click);
             // 
             // tStripMenu_Idle
             // 
@@ -178,7 +178,7 @@
             this.tStripMenu_Idle.Name = "tStripMenu_Idle";
             this.tStripMenu_Idle.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_Idle.Text = "IDLE";
-            this.tStripMenu_Idle.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            this.tStripMenu_Idle.Click += new System.EventHandler(this.ToolStripMenuItem3_Click);
             // 
             // tStripMenu_JpNb
             // 
@@ -186,7 +186,7 @@
             this.tStripMenu_JpNb.Name = "tStripMenu_JpNb";
             this.tStripMenu_JpNb.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_JpNb.Text = "Jupyter Notebook";
-            this.tStripMenu_JpNb.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            this.tStripMenu_JpNb.Click += new System.EventHandler(this.ToolStripMenuItem4_Click);
             // 
             // toolStripSeparator1
             // 
@@ -199,7 +199,7 @@
             this.tStripMenu_NewVenv.Name = "tStripMenu_NewVenv";
             this.tStripMenu_NewVenv.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_NewVenv.Text = "新しい仮想環境を作成";
-            this.tStripMenu_NewVenv.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            this.tStripMenu_NewVenv.Click += new System.EventHandler(this.ToolStripMenuItem5_Click);
             // 
             // tStripMenu_CopyEnv
             // 
@@ -207,7 +207,7 @@
             this.tStripMenu_CopyEnv.Name = "tStripMenu_CopyEnv";
             this.tStripMenu_CopyEnv.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_CopyEnv.Text = "新しい仮想環境へコピー";
-            this.tStripMenu_CopyEnv.Click += new System.EventHandler(this.tStripMenu_CopyEnv_Click);
+            this.tStripMenu_CopyEnv.Click += new System.EventHandler(this.TStripMenu_CopyEnv_Click);
             // 
             // tStripMenu_DelVenv
             // 
@@ -215,7 +215,7 @@
             this.tStripMenu_DelVenv.Name = "tStripMenu_DelVenv";
             this.tStripMenu_DelVenv.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_DelVenv.Text = "仮想環境の削除";
-            this.tStripMenu_DelVenv.Click += new System.EventHandler(this.tStripMenu_DelVenv_Click);
+            this.tStripMenu_DelVenv.Click += new System.EventHandler(this.TStripMenu_DelVenv_Click);
             // 
             // toolStripSeparator2
             // 
@@ -228,7 +228,7 @@
             this.tStripMenu_ReqTxtOut.Name = "tStripMenu_ReqTxtOut";
             this.tStripMenu_ReqTxtOut.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_ReqTxtOut.Text = "requirements.txt 出力";
-            this.tStripMenu_ReqTxtOut.Click += new System.EventHandler(this.tStripMenu_ReqTxtOut_Click);
+            this.tStripMenu_ReqTxtOut.Click += new System.EventHandler(this.TStripMenu_ReqTxtOut_Click);
             // 
             // tStripMenu_ReqTxt_In
             // 
@@ -236,7 +236,7 @@
             this.tStripMenu_ReqTxt_In.Name = "tStripMenu_ReqTxt_In";
             this.tStripMenu_ReqTxt_In.Size = new System.Drawing.Size(187, 22);
             this.tStripMenu_ReqTxt_In.Text = "requirements.txt 読込";
-            this.tStripMenu_ReqTxt_In.Click += new System.EventHandler(this.tStripMenu_ReqTxt_In_Click);
+            this.tStripMenu_ReqTxt_In.Click += new System.EventHandler(this.TStripMenu_ReqTxt_In_Click);
             // 
             // toolTip1
             // 
@@ -256,7 +256,7 @@
             this.btnVenvsDirChange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.btnVenvsDirChange, "仮想環境格納フォルダの変更");
             this.btnVenvsDirChange.UseVisualStyleBackColor = false;
-            this.btnVenvsDirChange.Click += new System.EventHandler(this.btnVenvSearchDirChange_Click);
+            this.btnVenvsDirChange.Click += new System.EventHandler(this.BtnVenvSearchDirChange_Click);
             // 
             // btnSelPyOnOff
             // 
@@ -273,7 +273,7 @@
             this.btnSelPyOnOff.Text = "△";
             this.toolTip1.SetToolTip(this.btnSelPyOnOff, "環境の選択(開く／閉じる)");
             this.btnSelPyOnOff.UseVisualStyleBackColor = false;
-            this.btnSelPyOnOff.Click += new System.EventHandler(this.button3_Click);
+            this.btnSelPyOnOff.Click += new System.EventHandler(this.Button3_Click);
             // 
             // txtBoxVenvsDir
             // 
@@ -310,7 +310,7 @@
             this.btnReqTxtIn.TabIndex = 30;
             this.toolTip1.SetToolTip(this.btnReqTxtIn, "パッケージリスト 読込 \r\n requirements.txt の内容で\r\n選択環境にパッケージをインストール\r\n");
             this.btnReqTxtIn.UseVisualStyleBackColor = true;
-            this.btnReqTxtIn.Click += new System.EventHandler(this.btnReqTxtIn_Click);
+            this.btnReqTxtIn.Click += new System.EventHandler(this.BtnReqTxtIn_Click);
             // 
             // btnReqTxtOut
             // 
@@ -322,7 +322,7 @@
             this.btnReqTxtOut.TabIndex = 29;
             this.toolTip1.SetToolTip(this.btnReqTxtOut, "パッケージリスト 出力 \r\n requirements.txt を\r\n作業フォルダに作成");
             this.btnReqTxtOut.UseVisualStyleBackColor = true;
-            this.btnReqTxtOut.Click += new System.EventHandler(this.btnReqTxtOut_Click);
+            this.btnReqTxtOut.Click += new System.EventHandler(this.BtnReqTxtOut_Click);
             // 
             // btnVenvNew
             // 
@@ -334,7 +334,7 @@
             this.btnVenvNew.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnVenvNew, "仮想環境の作成");
             this.btnVenvNew.UseVisualStyleBackColor = true;
-            this.btnVenvNew.Click += new System.EventHandler(this.btnVenvNew_Click);
+            this.btnVenvNew.Click += new System.EventHandler(this.BtnVenvNew_Click);
             // 
             // btnVenvDel
             // 
@@ -346,7 +346,7 @@
             this.btnVenvDel.TabIndex = 11;
             this.toolTip1.SetToolTip(this.btnVenvDel, "仮想環境の削除");
             this.btnVenvDel.UseVisualStyleBackColor = true;
-            this.btnVenvDel.Click += new System.EventHandler(this.btnVenvDel_Click);
+            this.btnVenvDel.Click += new System.EventHandler(this.BtnVenvDel_Click);
             // 
             // btnVenvClone
             // 
@@ -358,7 +358,7 @@
             this.btnVenvClone.TabIndex = 12;
             this.toolTip1.SetToolTip(this.btnVenvClone, "環境の複製");
             this.btnVenvClone.UseVisualStyleBackColor = true;
-            this.btnVenvClone.Click += new System.EventHandler(this.btnVenvClone_Click);
+            this.btnVenvClone.Click += new System.EventHandler(this.BtnVenvClone_Click);
             // 
             // splitContainer1
             // 
@@ -493,7 +493,7 @@
             this.tStripBtn_Cmd.Size = new System.Drawing.Size(40, 40);
             this.tStripBtn_Cmd.Text = "コマンドプロンプト";
             this.tStripBtn_Cmd.ToolTipText = "コマンド\r\nプロンプト";
-            this.tStripBtn_Cmd.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.tStripBtn_Cmd.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // toolStripSeparator4
             // 
@@ -511,7 +511,7 @@
             this.tStripBtn_PyIp.Size = new System.Drawing.Size(40, 40);
             this.tStripBtn_PyIp.Text = "インタプリタ";
             this.tStripBtn_PyIp.ToolTipText = "python\r\nインタプリタ";
-            this.tStripBtn_PyIp.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.tStripBtn_PyIp.Click += new System.EventHandler(this.ToolStripButton2_Click);
             // 
             // toolStripSeparator5
             // 
@@ -528,7 +528,7 @@
             this.tStripBtn_Idle.Name = "tStripBtn_Idle";
             this.tStripBtn_Idle.Size = new System.Drawing.Size(40, 40);
             this.tStripBtn_Idle.Text = "IDLE";
-            this.tStripBtn_Idle.Click += new System.EventHandler(this.tStripBtn_Idle_Click);
+            this.tStripBtn_Idle.Click += new System.EventHandler(this.TStripBtn_Idle_Click);
             // 
             // toolStripSeparator6
             // 
@@ -547,7 +547,7 @@
             this.tStripBtn_JpNb.Text = "Jupyter notebook";
             this.tStripBtn_JpNb.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tStripBtn_JpNb.ToolTipText = "Jupyter\r\nnotebook";
-            this.tStripBtn_JpNb.Click += new System.EventHandler(this.tStripBtn_JpNb_Click);
+            this.tStripBtn_JpNb.Click += new System.EventHandler(this.TStripBtn_JpNb_Click);
             // 
             // panel1
             // 
@@ -587,6 +587,7 @@
             this.Name = "FormHQ";
             this.Text = "HamuQonda";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.FormHQ_Shown);
             this.contextMenuStrip1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

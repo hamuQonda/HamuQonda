@@ -31,7 +31,7 @@ namespace HamuQonda
         internal Py_Env selPyEnv;
 
         // 選択されてる仮想環境のNo.
-        private int selVenvNo = 0;
+        //private int selVenvNo = 0;
 
         // python環境のリスト
         // 仮List化 @@@@@@@@@@@@@@@@@@@@
@@ -78,6 +78,7 @@ namespace HamuQonda
             }
 
             Height = 160;
+            TopMost = true;
             btnSelPyOnOff.Text = "▽";
             panel1.Visible = false;
 
@@ -138,9 +139,10 @@ namespace HamuQonda
 
             // システム環境の初期選択
             selPyNo = Properties.Settings.Default.SelectedPyEnvNo;
+            selPyNo = selPyNo == 0 ? 1 : selPyNo;
 
             // 仮想環境の初期選択
-            selVenvNo = Properties.Settings.Default.SelectedPyVenvNo;
+            //selVenvNo = Properties.Settings.Default.SelectedPyVenvNo;
 
         }
 
@@ -159,6 +161,7 @@ namespace HamuQonda
                     pyEnvList.Add(pyEnv);
                 }
             }
+            //if(pyEnvList.Count > 0) { selPyNo = 1; }
 
         }
 
@@ -251,7 +254,7 @@ namespace HamuQonda
                     Tag = pyEnv,    // Tagにpython環境オブジェクトを持たせる
                     ContextMenuStrip = contextMenuStrip1,
                 };
-                btnPyEnv.MouseDown += new MouseEventHandler(btnPyEnv_MouseDown);
+                btnPyEnv.MouseDown += new MouseEventHandler(BtnPyEnv_MouseDown);
                 btnPyEnv.FlatAppearance.BorderSize = 0;
                 btnPyEnv.FlatAppearance.BorderColor = Color.Orange;
                 btnPyEnv.FlatAppearance.MouseOverBackColor = Color.Lavender;
@@ -308,7 +311,7 @@ namespace HamuQonda
                     Tag = pyEnv,    // Tagにpython環境オブジェクトを持たせる
                     ContextMenuStrip = contextMenuStrip1,
                 };
-                btnPyEnv.MouseDown += new MouseEventHandler(btnPyEnv_MouseDown);
+                btnPyEnv.MouseDown += new MouseEventHandler(BtnPyEnv_MouseDown);
                 btnPyEnv.FlatAppearance.BorderSize = 0;
                 btnPyEnv.FlatAppearance.BorderColor = Color.Orange;
                 btnPyEnv.FlatAppearance.MouseOverBackColor = Color.Lavender;
@@ -321,7 +324,7 @@ namespace HamuQonda
         }
 
         private Button previousBtn;
-        private void btnPyEnv_MouseDown(object sender, MouseEventArgs e)
+        private void BtnPyEnv_MouseDown(object sender, MouseEventArgs e)
         {
             var btn = (Button)sender;
             SelectedPyEnvBtn(btn);
@@ -431,40 +434,11 @@ namespace HamuQonda
 
 
         /// <summary>
-        /// コマンド python -VV でpythonの詳細情報を得る
-        /// </summary>
-        /// <param name="py1"></param>
-        /// <param name="pyPath"></param>
-        /// <returns></returns>
-        private string GetPyVV(string py1, string pyPath)
-        {
-
-            // Python 3 以降のバージョン
-            var cmdArg = @"/c " + pyPath + " -VV";
-
-            if (py1.Contains("-V:2"))
-            {
-                // Python 2 は python -VV で詳細表示が無い為、下記処理で詳細を得る
-                cmdArg = "/c " + pyPath + " -c " + "\"import sys;print(sys.version)\"";
-            }
-
-            var result = CmdRun.Get_Out_Err(cmdArg)[0];
-
-            if (result.StartsWith("例外")) return "";
-            if (result.StartsWith("Python ")) return result;
-            if (result != null) return "Python " + result;
-
-            return "";
-
-        }
-
-
-        /// <summary>
         /// 作業フォルダの変更
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnWdirChange_Click(object sender, EventArgs e)
+        private void BtnWdirChange_Click(object sender, EventArgs e)
         {
             using (var fbDialog = new FolderBrowserDialog())
             {
@@ -515,7 +489,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnVenvSearchDirChange_Click(object sender, EventArgs e)
+        private void BtnVenvSearchDirChange_Click(object sender, EventArgs e)
         {
             using (var fbDialog = new FolderBrowserDialog())
             {
@@ -568,7 +542,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (selPyEnv is null) return;
 
@@ -610,7 +584,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (selPyEnv is null) return;
 
@@ -652,7 +626,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             if (selPyEnv is null) return;
 
@@ -722,7 +696,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             if (selPyEnv is null) return;
 
@@ -745,7 +719,7 @@ namespace HamuQonda
 
             txtInfo.AppendText("Jupyter Notebook 準備中！！" + Environment.NewLine);
 
-            string titleTxt = "Python " + selPyEnv.Ver + " - " + selPyEnv.Bit + " - " + selPyEnv.Provided;
+            //string titleTxt = "Python " + selPyEnv.Ver + " - " + selPyEnv.Bit + " - " + selPyEnv.Provided;
             string cmdArg;
             switch (selPyEnv.Type)
             {
@@ -827,7 +801,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             switch (btnSelPyOnOff.Text)
             {
@@ -923,7 +897,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnVenvNew_Click(object sender, EventArgs e)
+        private void BtnVenvNew_Click(object sender, EventArgs e)
         {
             // anaconda、仮想環境、が選択されているときは、ダイアログを開かない
             if (selPyEnv is null || selPyEnv.Type == "A" || selPyEnv.Type == "V") return;
@@ -966,7 +940,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnVenvClone_Click(object sender, EventArgs e)
+        private void BtnVenvClone_Click(object sender, EventArgs e)
         {
             // anaconda、が選択されているときは、ダイアログを開かない
             if (selPyEnv is null || selPyEnv.Type == "A") return;
@@ -1046,7 +1020,7 @@ namespace HamuQonda
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnVenvDel_Click(object sender, EventArgs e)
+        private void BtnVenvDel_Click(object sender, EventArgs e)
         {
             if (selPyEnv.Type != "V") return;
 
@@ -1095,42 +1069,42 @@ namespace HamuQonda
             }
         }
 
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            btnVenvNew_Click(sender, e);
+            BtnVenvNew_Click(sender, e);
         }
 
-        private void tStripMenu_DelVenv_Click(object sender, EventArgs e)
+        private void TStripMenu_DelVenv_Click(object sender, EventArgs e)
         {
-            btnVenvDel_Click(sender, e);
+            BtnVenvDel_Click(sender, e);
         }
 
-        private void tStripMenu_CopyEnv_Click(object sender, EventArgs e)
+        private void TStripMenu_CopyEnv_Click(object sender, EventArgs e)
         {
-            btnVenvClone_Click(sender, e);
+            BtnVenvClone_Click(sender, e);
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            toolStripMenuItem1_Click(sender, e);
+            ToolStripMenuItem1_Click(sender, e);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void ToolStripButton2_Click(object sender, EventArgs e)
         {
-            toolStripMenuItem2_Click(sender, e);
+            ToolStripMenuItem2_Click(sender, e);
         }
 
-        private void tStripBtn_Idle_Click(object sender, EventArgs e)
+        private void TStripBtn_Idle_Click(object sender, EventArgs e)
         {
-            toolStripMenuItem3_Click(sender, e);
+            ToolStripMenuItem3_Click(sender, e);
         }
 
-        private void tStripBtn_JpNb_Click(object sender, EventArgs e)
+        private void TStripBtn_JpNb_Click(object sender, EventArgs e)
         {
-            toolStripMenuItem4_Click(sender, e);
+            ToolStripMenuItem4_Click(sender, e);
         }
 
-        private void btnReqTxtOut_Click(object sender, EventArgs e)
+        private void BtnReqTxtOut_Click(object sender, EventArgs e)
         {
             var msgText = "選択環境のパッケージリストを\n" +
                           "作業フォルダに作成します。\n" +
@@ -1158,7 +1132,7 @@ namespace HamuQonda
             MessageBox.Show("パッケージリスト\nrequirements.txt\nを作成しました。");
         }
 
-        private void btnReqTxtIn_Click(object sender, EventArgs e)
+        private void BtnReqTxtIn_Click(object sender, EventArgs e)
         {
             var msgText = "パッケージリストを読込\n" +
                           "選択環境にインストールします。\n" +
@@ -1186,14 +1160,19 @@ namespace HamuQonda
             MessageBox.Show("requirements.txt を読込、\nパッケージをインストールしました。");
         }
 
-        private void tStripMenu_ReqTxtOut_Click(object sender, EventArgs e)
+        private void TStripMenu_ReqTxtOut_Click(object sender, EventArgs e)
         {
-            btnReqTxtIn_Click(sender, e);
+            BtnReqTxtIn_Click(sender, e);
         }
 
-        private void tStripMenu_ReqTxt_In_Click(object sender, EventArgs e)
+        private void TStripMenu_ReqTxt_In_Click(object sender, EventArgs e)
         {
-            btnReqTxtIn_Click(sender, e);
+            BtnReqTxtIn_Click(sender, e);
+        }
+
+        private void FormHQ_Shown(object sender, EventArgs e)
+        {
+            TopMost = false;
         }
     }
 }
