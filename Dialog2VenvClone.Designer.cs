@@ -147,6 +147,7 @@
             this.Controls.Add(this.lbl_venvsDir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_SourceEnv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Dialog2VenvClone";
             this.Text = "環境コピー ： 選択されている環境のパッケージを 新しい仮想環境にコピーします。";
             this.TopMost = true;

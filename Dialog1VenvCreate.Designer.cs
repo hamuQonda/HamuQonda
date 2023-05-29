@@ -36,6 +36,8 @@
             this.lbl_newVenvName = new System.Windows.Forms.Label();
             this.create_Btn = new System.Windows.Forms.Button();
             this.cancel_Btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_HomePy
@@ -122,12 +124,24 @@
             this.cancel_Btn.UseVisualStyleBackColor = true;
             this.cancel_Btn.Click += new System.EventHandler(this.Cancel_Btn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::HamuQonda.Properties.Resources._459_ca_h;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // DialogNewVenvCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 281);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cancel_Btn);
             this.Controls.Add(this.create_Btn);
             this.Controls.Add(this.lbl_newVenvName);
@@ -137,10 +151,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_HomePy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Dialog1VenvCreate";
+            this.Name = "DialogNewVenvCreate";
             this.Text = "仮想環境の作成";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Dialog1VenvCreate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +171,6 @@
         private System.Windows.Forms.Label lbl_newVenvName;
         private System.Windows.Forms.Button create_Btn;
         private System.Windows.Forms.Button cancel_Btn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

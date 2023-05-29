@@ -73,6 +73,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tStripBtn_JpNb = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             this.lbl_workingFolder.AutoSize = true;
             this.lbl_workingFolder.Font = new System.Drawing.Font("Ricty Diminished", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_workingFolder.Location = new System.Drawing.Point(9, 12);
+            this.lbl_workingFolder.Location = new System.Drawing.Point(9, 10);
             this.lbl_workingFolder.Name = "lbl_workingFolder";
             this.lbl_workingFolder.Size = new System.Drawing.Size(91, 13);
             this.lbl_workingFolder.TabIndex = 1;
@@ -114,10 +115,10 @@
             this.txtBoxWorkDir.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxWorkDir.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBoxWorkDir.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtBoxWorkDir.Location = new System.Drawing.Point(93, 12);
+            this.txtBoxWorkDir.Location = new System.Drawing.Point(97, 9);
             this.txtBoxWorkDir.Name = "txtBoxWorkDir";
             this.txtBoxWorkDir.ReadOnly = true;
-            this.txtBoxWorkDir.Size = new System.Drawing.Size(445, 14);
+            this.txtBoxWorkDir.Size = new System.Drawing.Size(487, 14);
             this.txtBoxWorkDir.TabIndex = 0;
             this.txtBoxWorkDir.TabStop = false;
             // 
@@ -127,9 +128,9 @@
             this.btnWdirChange.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnWdirChange.FlatAppearance.BorderSize = 0;
             this.btnWdirChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWdirChange.Location = new System.Drawing.Point(539, 9);
+            this.btnWdirChange.Location = new System.Drawing.Point(585, 8);
             this.btnWdirChange.Name = "btnWdirChange";
-            this.btnWdirChange.Size = new System.Drawing.Size(27, 20);
+            this.btnWdirChange.Size = new System.Drawing.Size(27, 16);
             this.btnWdirChange.TabIndex = 3;
             this.btnWdirChange.Text = "…";
             this.btnWdirChange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -248,7 +249,7 @@
             this.btnVenvsDirChange.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnVenvsDirChange.FlatAppearance.BorderSize = 0;
             this.btnVenvsDirChange.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnVenvsDirChange.Location = new System.Drawing.Point(537, 535);
+            this.btnVenvsDirChange.Location = new System.Drawing.Point(582, 535);
             this.btnVenvsDirChange.Name = "btnVenvsDirChange";
             this.btnVenvsDirChange.Size = new System.Drawing.Size(28, 20);
             this.btnVenvsDirChange.TabIndex = 17;
@@ -264,9 +265,9 @@
             this.btnSelPyOnOff.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSelPyOnOff.FlatAppearance.BorderSize = 0;
             this.btnSelPyOnOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelPyOnOff.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSelPyOnOff.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnSelPyOnOff.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSelPyOnOff.Location = new System.Drawing.Point(257, 117);
+            this.btnSelPyOnOff.Location = new System.Drawing.Point(534, 41);
             this.btnSelPyOnOff.Name = "btnSelPyOnOff";
             this.btnSelPyOnOff.Size = new System.Drawing.Size(73, 40);
             this.btnSelPyOnOff.TabIndex = 19;
@@ -280,10 +281,10 @@
             this.txtBoxVenvsDir.BackColor = System.Drawing.Color.White;
             this.txtBoxVenvsDir.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBoxVenvsDir.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtBoxVenvsDir.Location = new System.Drawing.Point(153, 537);
+            this.txtBoxVenvsDir.Location = new System.Drawing.Point(147, 535);
             this.txtBoxVenvsDir.Name = "txtBoxVenvsDir";
             this.txtBoxVenvsDir.ReadOnly = true;
-            this.txtBoxVenvsDir.Size = new System.Drawing.Size(384, 21);
+            this.txtBoxVenvsDir.Size = new System.Drawing.Size(437, 21);
             this.txtBoxVenvsDir.TabIndex = 27;
             this.txtBoxVenvsDir.TabStop = false;
             this.toolTip1.SetToolTip(this.txtBoxVenvsDir, "このフォルダ下の仮想環境が\r\n上のリストに表示されます。");
@@ -292,7 +293,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ricty Diminished Discord", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(15, 538);
+            this.label1.Location = new System.Drawing.Point(9, 538);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 28;
@@ -304,10 +305,11 @@
             // 
             this.btnReqTxtIn.BackgroundImage = global::HamuQonda.Properties.Resources.req_Input;
             this.btnReqTxtIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReqTxtIn.Location = new System.Drawing.Point(183, 5);
+            this.btnReqTxtIn.Location = new System.Drawing.Point(3, 148);
             this.btnReqTxtIn.Name = "btnReqTxtIn";
             this.btnReqTxtIn.Size = new System.Drawing.Size(33, 33);
             this.btnReqTxtIn.TabIndex = 30;
+            this.btnReqTxtIn.TabStop = false;
             this.toolTip1.SetToolTip(this.btnReqTxtIn, "パッケージリスト 読込 \r\n requirements.txt の内容で\r\n選択環境にパッケージをインストール\r\n");
             this.btnReqTxtIn.UseVisualStyleBackColor = true;
             this.btnReqTxtIn.Click += new System.EventHandler(this.BtnReqTxtIn_Click);
@@ -316,10 +318,11 @@
             // 
             this.btnReqTxtOut.BackgroundImage = global::HamuQonda.Properties.Resources.req_Out;
             this.btnReqTxtOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReqTxtOut.Location = new System.Drawing.Point(144, 5);
+            this.btnReqTxtOut.Location = new System.Drawing.Point(3, 111);
             this.btnReqTxtOut.Name = "btnReqTxtOut";
             this.btnReqTxtOut.Size = new System.Drawing.Size(33, 33);
             this.btnReqTxtOut.TabIndex = 29;
+            this.btnReqTxtOut.TabStop = false;
             this.toolTip1.SetToolTip(this.btnReqTxtOut, "パッケージリスト 出力 \r\n requirements.txt を\r\n作業フォルダに作成");
             this.btnReqTxtOut.UseVisualStyleBackColor = true;
             this.btnReqTxtOut.Click += new System.EventHandler(this.BtnReqTxtOut_Click);
@@ -328,10 +331,11 @@
             // 
             this.btnVenvNew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVenvNew.BackgroundImage")));
             this.btnVenvNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVenvNew.Location = new System.Drawing.Point(4, 5);
+            this.btnVenvNew.Location = new System.Drawing.Point(3, 0);
             this.btnVenvNew.Name = "btnVenvNew";
             this.btnVenvNew.Size = new System.Drawing.Size(33, 33);
             this.btnVenvNew.TabIndex = 10;
+            this.btnVenvNew.TabStop = false;
             this.toolTip1.SetToolTip(this.btnVenvNew, "仮想環境の作成");
             this.btnVenvNew.UseVisualStyleBackColor = true;
             this.btnVenvNew.Click += new System.EventHandler(this.BtnVenvNew_Click);
@@ -340,10 +344,11 @@
             // 
             this.btnVenvDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVenvDel.BackgroundImage")));
             this.btnVenvDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVenvDel.Location = new System.Drawing.Point(96, 5);
+            this.btnVenvDel.Location = new System.Drawing.Point(4, 218);
             this.btnVenvDel.Name = "btnVenvDel";
             this.btnVenvDel.Size = new System.Drawing.Size(33, 33);
             this.btnVenvDel.TabIndex = 11;
+            this.btnVenvDel.TabStop = false;
             this.toolTip1.SetToolTip(this.btnVenvDel, "仮想環境の削除");
             this.btnVenvDel.UseVisualStyleBackColor = true;
             this.btnVenvDel.Click += new System.EventHandler(this.BtnVenvDel_Click);
@@ -352,10 +357,11 @@
             // 
             this.btnVenvClone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVenvClone.BackgroundImage")));
             this.btnVenvClone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVenvClone.Location = new System.Drawing.Point(43, 5);
+            this.btnVenvClone.Location = new System.Drawing.Point(3, 37);
             this.btnVenvClone.Name = "btnVenvClone";
             this.btnVenvClone.Size = new System.Drawing.Size(33, 33);
             this.btnVenvClone.TabIndex = 12;
+            this.btnVenvClone.TabStop = false;
             this.toolTip1.SetToolTip(this.btnVenvClone, "環境の複製");
             this.btnVenvClone.UseVisualStyleBackColor = true;
             this.btnVenvClone.Click += new System.EventHandler(this.BtnVenvClone_Click);
@@ -381,7 +387,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.lbl_VirtualEnv);
             this.splitContainer1.Panel2MinSize = 256;
             this.splitContainer1.Size = new System.Drawing.Size(547, 334);
-            this.splitContainer1.SplitterDistance = 270;
+            this.splitContainer1.SplitterDistance = 256;
             this.splitContainer1.TabIndex = 14;
             // 
             // label3
@@ -392,7 +398,7 @@
             this.label3.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(270, 16);
+            this.label3.Size = new System.Drawing.Size(256, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "システム環境";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -418,7 +424,7 @@
             this.lbl_VirtualEnv.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbl_VirtualEnv.Location = new System.Drawing.Point(0, 0);
             this.lbl_VirtualEnv.Name = "lbl_VirtualEnv";
-            this.lbl_VirtualEnv.Size = new System.Drawing.Size(273, 16);
+            this.lbl_VirtualEnv.Size = new System.Drawing.Size(287, 16);
             this.lbl_VirtualEnv.TabIndex = 20;
             this.lbl_VirtualEnv.Text = "仮想環境";
             this.lbl_VirtualEnv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -426,13 +432,14 @@
             // txtInfo
             // 
             this.txtInfo.BackColor = System.Drawing.Color.Snow;
+            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtInfo.Font = new System.Drawing.Font("Ricty Diminished Discord", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtInfo.Location = new System.Drawing.Point(12, 35);
+            this.txtInfo.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtInfo.Location = new System.Drawing.Point(12, 84);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.ReadOnly = true;
-            this.txtInfo.Size = new System.Drawing.Size(556, 77);
+            this.txtInfo.Size = new System.Drawing.Size(596, 77);
             this.txtInfo.TabIndex = 0;
             this.txtInfo.TabStop = false;
             // 
@@ -470,7 +477,7 @@
             this.toolStripSeparator6,
             this.tStripBtn_JpNb,
             this.toolStripSeparator3});
-            this.toolStrip1.Location = new System.Drawing.Point(11, 115);
+            this.toolStrip1.Location = new System.Drawing.Point(151, 30);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(243, 43);
@@ -556,17 +563,28 @@
             this.panel1.Controls.Add(this.btnReqTxtIn);
             this.panel1.Controls.Add(this.btnVenvDel);
             this.panel1.Controls.Add(this.btnReqTxtOut);
-            this.panel1.Location = new System.Drawing.Point(354, 144);
+            this.panel1.Location = new System.Drawing.Point(571, 192);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 38);
+            this.panel1.Size = new System.Drawing.Size(40, 254);
             this.panel1.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(14, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 12);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "現在の環境";
             // 
             // FormHQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(580, 557);
+            this.ClientSize = new System.Drawing.Size(620, 557);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBoxVenvsDir);
             this.Controls.Add(this.label1);
@@ -582,8 +600,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 600);
-            this.MinimumSize = new System.Drawing.Size(600, 210);
+            this.MaximumSize = new System.Drawing.Size(640, 600);
+            this.MinimumSize = new System.Drawing.Size(640, 210);
             this.Name = "FormHQ";
             this.Text = "HamuQonda";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -648,6 +666,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tStripMenu_ReqTxtOut;
         private System.Windows.Forms.ToolStripMenuItem tStripMenu_ReqTxt_In;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -97,9 +97,9 @@ namespace HamuQonda
             var parentPanel = (selPyNo > pyEnvList.Count) ? splitContainer1.Panel2 : splitContainer1.Panel1;
             foreach (object b in parentPanel.Controls)
             {
-                if (b is Button && ((Button)b).Tag != null)
+                if (b is Button button && button.Tag != null)
                 {
-                    var btn = (Button)b;
+                    var btn = button;
                     Py_Env pyEnv = (Py_Env)btn.Tag;
 
                     if (pyEnv.TagNo == selPyNo)
@@ -274,9 +274,9 @@ namespace HamuQonda
             //foreach (object b in TabP_Env.Controls)
             foreach (object b in splitContainer1.Panel1.Controls)
             {
-                if (b is Button && ((Button)b).Tag != null)
+                if (b is Button button && button.Tag != null)
                 {
-                    var btn = (Button)b;
+                    var btn = button;
                     Py_Env pyEnv = (Py_Env)btn.Tag;
 
                     if (pyEnv.TagNo == selPyNo)
@@ -358,9 +358,9 @@ namespace HamuQonda
 
             foreach (object b in parentPanel.Controls)
             {
-                if (b is Button && ((Button)b).Tag != null)
+                if (b is Button button && button.Tag != null)
                 {
-                    var _btn = (Button)b;
+                    var _btn = button;
                     Py_Env _pyEnv = (Py_Env)_btn.Tag;
 
                     if (_pyEnv == previousEnv)
@@ -388,39 +388,43 @@ namespace HamuQonda
             var addtxt = "[ 現在の環境 ]：";
             if (pyEnv.Type == "V") // Venv
             {
-                addtxt = "選択環境 ((( 仮想環境 )))";
+                addtxt = "[ 仮想環境 ]";
                 tStripMenu_NewVenv.Visible = false; btnVenvNew.  Visible = false;
                 tStripMenu_CopyEnv.Visible = true; btnVenvClone.Visible = true;
                 tStripMenu_DelVenv.Visible = true; btnVenvDel.Visible = true;
                 tStripMenu_JpNb.Visible = !pyEnv.Ver.StartsWith("2.");
                 tStripBtn_JpNb.Enabled = !pyEnv.Ver.StartsWith("2.");
+                btnReqTxtIn.Enabled = true;
             }
             if (pyEnv.Type == "O") // org
             {
-                addtxt = "選択環境 << システム環境 >>";
+                addtxt = "< システム環境 >";
                 tStripMenu_NewVenv.Visible = true;  btnVenvNew.  Visible = true;
                 tStripMenu_CopyEnv.Visible = true; btnVenvClone.Visible = true; ;
                 tStripMenu_DelVenv.Visible = false; btnVenvDel.Visible = false; ;
                 tStripMenu_JpNb.Visible = !pyEnv.Ver.StartsWith("2.");
                 tStripBtn_JpNb.Enabled = !pyEnv.Ver.StartsWith("2.");
+                btnReqTxtIn.Enabled = true;
             }
             if (pyEnv.Type == "S") // store
             {
-                addtxt = "選択環境 << システム環境 >> store";
+                addtxt = "< システム環境 > store";
                 tStripMenu_NewVenv.Visible = true;  btnVenvNew.  Visible = true;
                 tStripMenu_CopyEnv.Visible = true; btnVenvClone.Visible = true;
                 tStripMenu_DelVenv.Visible = false; btnVenvDel.Visible = false;
                 tStripMenu_JpNb.Visible = true;
                 tStripBtn_JpNb.Enabled = true;
+                btnReqTxtIn.Enabled = true;
             }
             if (pyEnv.Type == "A") // Anaconda
             {
-                addtxt = "選択環境 [[ Anaconda base ]]";
+                addtxt = "[ Anaconda base ]";
                 tStripMenu_NewVenv.Visible = false; btnVenvNew.  Visible = false;
                 tStripMenu_CopyEnv.Visible = false; btnVenvClone.Visible = false;
                 tStripMenu_DelVenv.Visible = false; btnVenvDel.Visible = false;
                 tStripMenu_JpNb.Visible = true;
                 tStripBtn_JpNb.Enabled = true;
+                btnReqTxtIn.Enabled = false;
             }
             txtInfo.AppendText(addtxt + Environment.NewLine);
             txtInfo.AppendText(pyEnv + Environment.NewLine);
@@ -463,6 +467,8 @@ namespace HamuQonda
                         {
                             workingDir = selectDir;
                             txtBoxWorkDir.Text = workingDir;
+                            Directory.SetCurrentDirectory(workingDir);
+
                             Properties.Settings.Default.WorkingFolder = workingDir;
                             Properties.Settings.Default.Save();
                             break;
@@ -514,10 +520,19 @@ namespace HamuQonda
                         if (Is.Writable(selectDir))
                         {
                             venvsDir = selectDir;
+                            txtBoxVenvsDir.Text = venvsDir;
                             toolTip1.SetToolTip(lbl_VirtualEnv, "仮想環境\n格納場所\n" + venvsDir);
                             toolTip1.SetToolTip(splitContainer1.Panel2, "仮想環境\n格納場所\n" + venvsDir);
                             Properties.Settings.Default.VenvsFolder = venvsDir;
                             Properties.Settings.Default.Save();
+
+                            DeleteVenvPyBtnOnPanel2();  // 仮想環境ボタンを削除
+                            InitializeVenvPyList();     // 仮想環境リストを更新
+                            CreateVenvPyBtnOnPanel2();  // 仮想環境ボタンを生成
+                            selPyNo = (selPyNo > pyEnvList.Count ) ? pyEnvList.Count + 1 : selPyNo;
+                            selPyNo = (pyVenvList.Count == 0) ? 1 : selPyNo;
+                            SelPyBtnActivation();
+
                             break;
                         }
                         else
@@ -1004,9 +1019,9 @@ namespace HamuQonda
             for (int i = splitContainer1.Panel2.Controls.Count - 1; i >= 0; i--)
             {
                 var ctrl = splitContainer1.Panel2.Controls[i];
-                if (ctrl is Button && ctrl.Text != "…")
+                if (ctrl is Button button && ctrl.Text != "…")
                 {
-                    var btn = (Button)ctrl;
+                    var btn = button;
                     var penv = (Py_Env)btn.Tag;
                     Console.WriteLine("delete TagNo. = " + penv.TagNo);
                     Py_Env.IdxDecrement();
