@@ -265,11 +265,11 @@
             this.btnSelPyOnOff.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSelPyOnOff.FlatAppearance.BorderSize = 0;
             this.btnSelPyOnOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelPyOnOff.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSelPyOnOff.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnSelPyOnOff.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSelPyOnOff.Location = new System.Drawing.Point(534, 41);
+            this.btnSelPyOnOff.Location = new System.Drawing.Point(555, 59);
             this.btnSelPyOnOff.Name = "btnSelPyOnOff";
-            this.btnSelPyOnOff.Size = new System.Drawing.Size(73, 40);
+            this.btnSelPyOnOff.Size = new System.Drawing.Size(52, 23);
             this.btnSelPyOnOff.TabIndex = 19;
             this.btnSelPyOnOff.Text = "△";
             this.toolTip1.SetToolTip(this.btnSelPyOnOff, "環境の選択(開く／閉じる)");
@@ -477,7 +477,7 @@
             this.toolStripSeparator6,
             this.tStripBtn_JpNb,
             this.toolStripSeparator3});
-            this.toolStrip1.Location = new System.Drawing.Point(151, 30);
+            this.toolStrip1.Location = new System.Drawing.Point(188, 30);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(243, 43);
@@ -572,9 +572,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(14, 71);
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(14, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 12);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 32;
             this.label2.Text = "現在の環境";
             // 
