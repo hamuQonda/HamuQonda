@@ -434,7 +434,7 @@
             this.txtInfo.BackColor = System.Drawing.Color.Snow;
             this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtInfo.Font = new System.Drawing.Font("Ricty Diminished Discord", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtInfo.Font = new System.Drawing.Font("Ricty Diminished Discord", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtInfo.Location = new System.Drawing.Point(12, 84);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
